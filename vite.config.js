@@ -11,10 +11,10 @@ export default defineConfig({
       registerType: 'autoUpdate', // auto update service worker
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'My Vite PWA App',
-        short_name: 'VitePWA',
-        description: 'My Vite + PWA app',
-        theme_color: '#ffffff',
+        name: 'Gi1 Super Chat',
+        short_name: 'Gi1 Chat',
+        description: 'Gi1 Super Chat',
+        theme_color: '#F3BF31',
         icons: [
           {
             src: 'pwa-192x192.png',
