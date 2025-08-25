@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { register } from '../features/auth/authSlice';
 import AuthLayout from '../layouts/AuthLayout';
 import { FiUser, FiMail, FiLock } from 'react-icons/fi';
@@ -27,7 +27,7 @@ function Register() {
   return (
     <AuthLayout>
       <h2 className="text-3xl font-bold text-center text-gray-800">Register</h2>
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="text-red-500 text-center">{error}</p>}
       <form onSubmit={handleSubmit} className="mt-8 space-y-6">
         <div className="relative">
           <FiUser className="absolute w-6 h-6 text-gray-400 top-3 left-3" />
@@ -37,7 +37,7 @@ function Register() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
-            className="w-full py-3 pl-12 pr-4 text-gray-700 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full py-3 pl-12 pr-4 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
         <div className="relative">
@@ -48,7 +48,7 @@ function Register() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            className="w-full py-3 pl-12 pr-4 text-gray-700 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full py-3 pl-12 pr-4 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
         <div className="relative">
@@ -59,16 +59,22 @@ function Register() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="w-full py-3 pl-12 pr-4 text-gray-700 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full py-3 pl-12 pr-4 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
         <button
           type="submit"
-          className="w-full py-3 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full py-3 font-semibold text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         >
           Register
         </button>
       </form>
+      <p className="text-center text-gray-600">
+        Already have an account?{' '}
+        <Link to="/login" className="text-indigo-500 hover:underline">
+          Login
+        </Link>
+      </p>
     </AuthLayout>
   );
 }
